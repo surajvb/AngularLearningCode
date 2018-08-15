@@ -1,0 +1,64 @@
+<p>
+  {{title}}
+</p>
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+<div style="display:block;padding: 30px;">
+  <table style="border: solid black">
+    <tr>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+    </tr>
+    <tr>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+      <td style="border: solid black" [attr.colspan]="colspan">asdadasdad</td>
+    </tr>
+  </table>
+<div style="display:block;padding: 30px;">
+    <button class ="btn btn-primary" [class.active]="isActive">classBinding</button>
+    <button class="btn" [style.backgroundColor]="isActive ? 'blue' : 'white'">styleBinding</button>
+</div>
+  
+</div>
+
+
+<div style="display:block;padding: 30px;" (click)="onDivClicked()">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    
+    <button type="button" class="btn btn-link">Link</button>
+  <button class="btn" (click)="onButtonClicked($event)">Click me</button>
+</div>
+
+<!-- template variables-->
+ <div style="display:block;padding: 30px;">
+   <h4>see console</h4>
+  <p>Enter email and hit enter  &nbsp;
+  <input #email type="text" (keyup.enter)="onKeyUp(email.value)" placeholder="enter email"></p>
+  <p>Enter password and hit enter  &nbsp;
+      <input #password type="password" (keyup.enter)="onKeyUp(password.value)" placeholder="enter password"></p>
+</div>
+
+<!--two way binding-->
+<div style="display:block;padding: 30px;">
+    <h4>see console two way binding</h4>
+   <p>Enter email and hit enter  &nbsp;
+   <input [(ngModel)]="email2" type="text" (keyup.enter)="onTwoWay()" ></p>
+ </div>
